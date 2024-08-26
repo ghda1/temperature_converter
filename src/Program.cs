@@ -2,8 +2,13 @@
 
     static void Main () {
 
-        Console.WriteLine("Enter a temperature and its unit (C or F): ");
+        while (true){
+        Console.WriteLine("Enter a temperature and its unit (C or F), or type 'Quit' to exit:");
         string temp = Console.ReadLine();
+
+        if (temp.Trim().ToLower() == "quit"){
+            break;
+        }
 
         string [] tempSplitting = temp.Split(" ");
         int tempDegree = Convert.ToInt32(tempSplitting[0]);
@@ -11,7 +16,7 @@
        
        Console.WriteLine(TempConvert (tempDegree , tempUnit));
         
-    }
+        }}
         public static string TempConvert (int tempDegree , string tempUnit){
 
  // checking entered value is 2 character or not  
@@ -43,6 +48,5 @@
 }
 
 }
-
 
 
