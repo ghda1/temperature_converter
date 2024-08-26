@@ -14,11 +14,12 @@
     }
         public static string TempConvert (int tempDegree , string tempUnit){
 
- // checking entered value is 2 character or not 45 
+ // checking entered value is 2 character or not  
         int size = tempDegree.ToString().Length;
         if (size == 2){
 
 // converting fahrenheit to celsius formula C = (F - 32) × 5/9 
+        tempUnit = tempUnit.ToUpper();
         if (tempUnit == "F"){
 
             double celsiusDegree = ( tempDegree - 32) * 5.0/9.0;
@@ -32,11 +33,11 @@
             return  $"Converted: {tempDegree} C = {fahrenheitDegree} F";
         }
         else{
-            return "Sorry!";
+            return "Invalid units!!";
         }
     
  } else{
-    return "Sorry!";
+    return "Invalid length!";
  
     }
 }
